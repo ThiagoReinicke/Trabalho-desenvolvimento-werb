@@ -1,0 +1,220 @@
+/* importando fonts do google */
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap");
+
+/* reseta o padrão css*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*define variaveis para poder usar e evitar a repetição de codigos*/
+:root {
+  --cor-principal: #e5e1da;
+  --cor-secundaria: #726d6d;
+  --cor-de-fundo: #92c7cf;
+  --cor-destaque-titulo: #365486;
+  --cor-do-botao-hover: #aad7d9;
+  --fonte-primaria: "Krona One", sans-serif;
+  --fonte-secundaria: "Montserat", sans-serif;
+}
+
+/*definindo a cor de fundo e e escrita pegando da variavel root*/
+body {
+  box-sizing: border-box;
+  background-color: var(--cor-de-fundo);
+  color: var(--cor-principal);
+}
+
+/* definindo o espaçamento */
+.cabecalho {
+  padding: 2% 0% 0% 15%;
+  background-color: violet;
+}
+
+/* opitei pelo flex boox pois já utilizava antes e acho mais facil que o grid */
+.cabecalho__menu {
+  display: flex;
+  gap: 60px;
+  padding-bottom: 20px;
+}
+
+/* estilizando o cabeçalho*/
+.cabecalho__menu__link {
+  text-decoration: none;
+  color: var(--cor-destaque-titulo);
+  font-family: var(--fonte-secundaria);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/*defindo a fonte a cor e o tamanho*/
+.apresentacao__conteudo__titulo {
+  color: var(--cor-principal);
+  font-family: var(--fonte-primaria);
+  font-size: 2.25rem;
+}
+
+/*cor do titulo*/
+.titulo__destaque {
+  color: var(--cor-destaque-titulo);
+}
+
+/* tamanho de fonte cor do texto e fonte da escrita*/
+.apresentacao__conteudo__texto {
+  font-size: 1.5rem;
+  color: var(--cor-secundaria);
+  font-family: var(--fonte-secundaria);
+}
+
+/*espaçamento display pra poder alinhar os itens no centro, para ocupar todo espaço e pra seprar em pixels*/
+.apresentacao {
+  padding: 8% 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 82px;
+}
+
+/* tamanho do conteudo, alinhar contrudo e direcionar e espaçamento em pixels*/
+.apresentacao__conteudo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*display pra poder ajustar os itens, direcionar e ajustar espaçamento alinha no centro criar borda em pixels e espaçamento*/
+.apresentacao__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  gap: 30px;
+}
+
+/*tipo da escrita, tanho da fonte e peso da escrita*/
+.apresentacao__links__titulo {
+  font-family: var(--fonte-primaria);
+  font-weight: 400;
+  color: var(--cor-principal);
+}
+
+/* display para poder ajustar os itens, alinhar no centro, espaxamento,tamanho do item, borda solida, allinhar texto no centro
+remover decoração, fonte da escrita, borda aredondada em pixels, tamanho da escrita, peso da escrita, cor e espaçamento*/
+.apresentacao__links__navegacao {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 50%;
+  border: 2px solid var(--cor-destaque-titulo);
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--fonte-secundaria);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-principal);
+  padding: 21.5px 0;
+}
+
+/* muda cor de fundo quando o mause estiver em cima */
+.apresentacao__links__navegacao:hover {
+  background-color: var(--cor-do-botao-hover);
+}
+
+/* espaçamento, cor de fundo, alinha texto no centro, cor da escrita, fonte da escrita, peso e tamanho */
+.rodape {
+  padding: 24px;
+  background-color: var(--cor-destaque-titulo);
+  text-align: center;
+  color: var(--cor-de-fundo);
+  font-family: var(--fonte-secundaria);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* tamanho da imagem 50% */
+.apresentacao__imagem {
+  width: 50%;
+}
+
+/* define as variaveis pra quando o tamanho é maior de 1200 pixels */
+@media (max-width: 1200px) {
+  .cabecalho {
+    padding: 10%;
+  }
+  .cabecalho__menu {
+    justify-content: center;
+  }
+  .apresentacao {
+    flex-direction: column-reverse;
+  }
+  .apresentacao__conteudo {
+    padding: 4%;
+    width: auto;
+  }
+}
+
+/*display block para não alterar, tamanho de 20 pixels e margin de 10 pixels para a direita */
+form label,
+form p {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+/* margin de 20 pixels para a direita, espaçamento interno de 10 pixels para esquerda e direita e 
+25pixels para cima e baixo e tamanho de 50% */
+.input-padrao {
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 25px;
+  width: 50%;
+}
+
+/*serve para selecionar uma das opções*/
+.checkbox {
+  margin: 20px 0;
+}
+
+/* tamanho de 40%, espaçamento de 15 pixels, cor de fundo laranja, cor da escrita branco, peso da fonte negrito,
+tamanho de 18 pixels, sem borda, borda aredondada, tempo que demora pra mudar 1 segundo, espaçamento de 20 pixels para baixo*/
+.enviar {
+  width: 40%;
+  padding: 15px 0;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  transition: 1s all;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* muda a cor do fundo e aumenta o tamanho da imagem*/
+.enviar:hover {
+  background: darkorange;
+  transform: scale(1.2);
+}
+
+/* espaçamento de 20 pixels para a esquerda 0 para cima e para baixo e 40 pixels para a direita*/
+table {
+  margin: 20px 0 40px;
+}
+
+/* cor de fundo, cor da escrita e peso da fonte negrito*/
+thead {
+  background: #555555;
+  color: white;
+  font-weight: bold;
+}
+
+/* bordar de i pixel solida branco e espaçamento interno de 8pixels para esqueda e direita e 15pixels pra cima e para baixo */
+td,
+th {
+  border: 1px solid #000000;
+  padding: 8px 15px;
+}
